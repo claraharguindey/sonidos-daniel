@@ -11,7 +11,7 @@ const buttonRisa = document.querySelector("#risa");
 buttonCristales?.addEventListener("click", () => cristales.play());
 buttonExplosion?.addEventListener("click", () => explosion.play());
 buttonPerro?.addEventListener("click", () => perro.play());
-buttonRisa?.addEventListener("click", () => explosion.play());
+buttonRisa?.addEventListener("click", () => risa.play());
 
 document.addEventListener("keydown", function (e) {
   const key = e.key.toLowerCase();
