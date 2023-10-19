@@ -13,10 +13,10 @@ body {
 }
 
 h1 {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    color: hotpink;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  color: hotpink;
 }
 
 main {
@@ -97,11 +97,21 @@ button:active:after {
   transform: translateY(1.5mm);
 }
 
-.b {
+.a {
   top: 110px;
+}
+
+.b {
+  top: 23px;
+  left: -111px;
 }
 
 .c {
   top: -45px;
+  left: 10px;
+}
+
+.d {
+  top: 281px;
   left: 10px;
 }
