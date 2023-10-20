@@ -17,6 +17,7 @@ h1 {
   top: 10px;
   left: 10px;
   color: hotpink;
+  font-size: 24px;
 }
 
 main {
@@ -56,14 +57,6 @@ button:before {
   width: var(--outer-diameter);
   height: var(--outer-diameter);
   border-radius: var(--outer-diameter);
-  background: radial-gradient(var(--white), transparent 75%),
-    radial-gradient(
-      transparent var(--inner-radius),
-      var(--white) var(--inner-radius),
-      var(--white) calc(var(--inner-radius) + 0.25mm),
-      var(--black) calc(var(--inner-radius) + 0.25mm)
-    ),
-    hotpink;
   background-size: 75% 75%, 100%, 100%;
   background-position: -25% -25%, 0 0, 0 0;
   background-repeat: no-repeat;
@@ -80,15 +73,10 @@ button:after {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: MediumVioletRed;
+  color: grey;
   width: var(--inner-diameter);
   height: var(--inner-diameter);
   border-radius: var(--inner-diameter);
-  background: radial-gradient(
-      transparent calc(var(--inner-radius) - 1mm),
-      black
-    ),
-    linear-gradient(to bottom right, transparent, var(--black)), hotpink;
   transition: all 100ms;
 }
 
@@ -97,6 +85,85 @@ button:active:after {
   transform: translateY(1.5mm);
 }
 
+.pink:after {
+  background: radial-gradient(
+      transparent calc(var(--inner-radius) - 1mm),
+      black
+    ),
+    linear-gradient(to bottom right, transparent, var(--black)), hotpink;
+  transition: all 100ms;
+}
+
+.pink:before {
+  background: radial-gradient(var(--white), transparent 75%),
+    radial-gradient(
+      transparent var(--inner-radius),
+      var(--white) var(--inner-radius),
+      var(--white) calc(var(--inner-radius) + 0.25mm),
+      var(--black) calc(var(--inner-radius) + 0.25mm)
+    ),
+    hotpink;
+}
+
+.blue:after {
+  background: radial-gradient(
+      transparent calc(var(--inner-radius) - 1mm),
+      black
+    ),
+    linear-gradient(to bottom right, transparent, var(--black)), #4ADEDE;
+  transition: all 100ms;
+}
+
+.blue:before {
+  background: radial-gradient(var(--white), transparent 75%),
+    radial-gradient(
+      transparent var(--inner-radius),
+      var(--white) var(--inner-radius),
+      var(--white) calc(var(--inner-radius) + 0.25mm),
+      var(--black) calc(var(--inner-radius) + 0.25mm)
+    ),
+    #4ADEDE;
+}
+
+.green:after {
+  background: radial-gradient(
+      transparent calc(var(--inner-radius) - 1mm),
+      black
+    ),
+    linear-gradient(to bottom right, transparent, var(--black)),  #00FF00;
+  transition: all 100ms;
+}
+
+.green:before {
+  background: radial-gradient(var(--white), transparent 75%),
+    radial-gradient(
+      transparent var(--inner-radius),
+      var(--white) var(--inner-radius),
+      var(--white) calc(var(--inner-radius) + 0.25mm),
+      var(--black) calc(var(--inner-radius) + 0.25mm)
+    ),
+    #00FF00;
+}
+
+.yellow:after {
+  background: radial-gradient(
+      transparent calc(var(--inner-radius) - 1mm),
+      black
+    ),
+    linear-gradient(to bottom right, transparent, var(--black)), yellow;
+  transition: all 100ms;
+}
+
+.yellow:before {
+  background: radial-gradient(var(--white), transparent 75%),
+    radial-gradient(
+      transparent var(--inner-radius),
+      var(--white) var(--inner-radius),
+      var(--white) calc(var(--inner-radius) + 0.25mm),
+      var(--black) calc(var(--inner-radius) + 0.25mm)
+    ),
+    yellow;
+}
 .a {
   top: 110px;
 }
