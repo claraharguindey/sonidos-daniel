@@ -2,7 +2,7 @@ body {
   background-color: gray;
   width: 100vw;
   height: 100vh;
-  margin: 0;
+  margin: 20px;
   padding: 0;
   overflow: hidden;
 }
@@ -75,6 +75,11 @@ main {
 }
 
 @media (max-width: 600px) {
+  body {
+    overflow: auto;
+    margin: 0 5px;
+  }
+
   .buttons-container {
     grid-template-columns: repeat(2, 1fr);
   }

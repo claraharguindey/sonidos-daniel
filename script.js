@@ -5,6 +5,7 @@ const audios = {
   risa: new Audio("laughter3.mp3"),
   ramala: new Audio("ramala.mp3"),
   nena: new Audio("nena.mp3"),
+  amores: new Audio("amores.mp3"),
 };
 
 const stopOthers = (current) => {
