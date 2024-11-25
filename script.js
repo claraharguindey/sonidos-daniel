@@ -6,16 +6,28 @@ const perro = new Audio(
 const risa = new Audio(
   "laughter3.mp3"
 );
+const nena = new Audio(
+  "nena.mp3"
+);
+
+const ramala = new Audio(
+  "ramala.mp3"
+);
 
 const buttonCristales = document.querySelector("#cristales");
 const buttonExplosion = document.querySelector("#explosion");
 const buttonPerro = document.querySelector("#perro");
 const buttonRisa = document.querySelector("#risa");
+const buttonRamala = document.querySelector("#ramala");
+const buttonNena = document.querySelector("#nena");
+
 const stopAll = () => {
   cristales.pause();
   explosion.pause();
   perro.pause();
   risa.pause();
+  ramala.pause();
+  nena.pause();
 };
 
 buttonCristales?.addEventListener("click", () => {
@@ -36,6 +48,16 @@ buttonPerro?.addEventListener("click", () => {
 buttonRisa?.addEventListener("click", () => {
   stopAll();
   risa.play();
+});
+
+buttonRamala?.addEventListener("click", () => {
+  stopAll();
+  ramala.play();
+});
+
+buttonNena?.addEventListener("click", () => {
+  stopAll();
+  nena.play();
 });
 
 document.addEventListener("keydown", function (e) {

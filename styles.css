@@ -1,186 +1,81 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap:400,100,500,300italic,500italic,700italic,900,300");
 body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  background-color: gray;
   width: 100vw;
   height: 100vh;
   margin: 0;
   padding: 0;
-  /* font-family: "Poppins"; */
-  background: silver;
-  perspective: 1000px;
+  overflow: hidden;
 }
 
 h1 {
-  position: absolute;
-  top: 10px;
-  left: 24px;
-  color: black;
-  font-size: 24px;
-  font-weight: 300;
-  text-transform: uppercase;
+  margin: 15px;
 }
 
 main {
-  transform-style: preserve-3d;
-  position: relative;
-  transform: rotateX(15deg) rotateY(10deg) rotateZ(5deg) translateX(-10mm)
-    translateY(-25mm);
-}
-
-:root {
-  --outer-diameter: 33.2mm;
-  --outer-radius: calc(var(--outer-diameter) / 2);
-  --inner-diameter: 25mm;
-  --inner-radius: calc(var(--inner-diameter) / 2);
-  --transparent: rgba(0, 0, 0, 0);
-  --white: rgba(255, 255, 255, 0.25);
-  --black: rgba(0, 0, 0, 0.05);
-}
-
-button {
-  position: absolute;
-  width: var(--inner-diameter);
-  height: var(--inner-diameter);
-  border-radius: var(--outer-diameter);
-  border: none;
-  background: radial-gradient(var(--white), transparent var(--inner-radius));
-  box-shadow: 0 0.25mm 0 var(--black), 0 0.5mm 0 var(--black),
-    0 0.75mm 0 var(--black), 0 1mm 0 var(--black), 0 1.25mm 0 var(--black),
-    0 1.5mm 0 var(--black), 0 1.75mm 0 var(--black);
-}
-
-button:before {
-  content: "";
-  position: absolute;
-  top: calc(var(--inner-radius) - var(--outer-radius));
-  left: calc(var(--inner-radius) - var(--outer-radius));
-  width: var(--outer-diameter);
-  height: var(--outer-diameter);
-  border-radius: var(--outer-diameter);
-  background-size: 75% 75%, 100%, 100%;
-  background-position: -25% -25%, 0 0, 0 0;
-  background-repeat: no-repeat;
-  box-shadow: 0 0.25mm 0 var(--black);
-  transform: translateY(1.75mm);
-  z-index: -1;
-}
-
-button:after {
-  content: attr(data-key);
-  position: absolute;
-  top: 0;
-  left: 0;
   display: flex;
-  align-items: center;
   justify-content: center;
-  color: grey;
-  width: var(--inner-diameter);
-  height: var(--inner-diameter);
-  border-radius: var(--inner-diameter);
-  transition: all 100ms;
+  align-items: center;
+  margin: 0;
+  overflow: hidden;
+}
+.buttons-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+  align-items: center;
 }
 
-button.active:after,
-button:active:after {
-  transform: translateY(1.5mm);
+.button-wrapper {
+  position: relative;
+  width: 200px;
+  height: 190px;
 }
 
-.pink:after {
-  background: radial-gradient(
-      transparent calc(var(--inner-radius) - 1mm),
-      black
-    ),
-    linear-gradient(to bottom right, transparent, var(--black)), hotpink;
-  transition: all 100ms;
+.circle {
+  border-radius: 50%;
 }
 
-.pink:before {
-  background: radial-gradient(var(--white), transparent 75%),
-    radial-gradient(
-      transparent var(--inner-radius),
-      var(--white) var(--inner-radius),
-      var(--white) calc(var(--inner-radius) + 0.25mm),
-      var(--black) calc(var(--inner-radius) + 0.25mm)
-    ),
-    hotpink;
+.large-button-background {
+  width: 188px;
+  height: 174px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.blue:after {
-  background: radial-gradient(
-      transparent calc(var(--inner-radius) - 1mm),
-      black
-    ),
-    linear-gradient(to bottom right, transparent, var(--black)), #4ADEDE;
-  transition: all 100ms;
+.large-button {
+  width: 200px;
+  height: 190px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url("transparent_button_sprite.png") no-repeat;
+  background-position: -5px -5px;
+  border: 0;
+  display: block;
+  -webkit-tap-highlight-color: transparent;
 }
 
-.blue:before {
-  background: radial-gradient(var(--white), transparent 75%),
-    radial-gradient(
-      transparent var(--inner-radius),
-      var(--white) var(--inner-radius),
-      var(--white) calc(var(--inner-radius) + 0.25mm),
-      var(--black) calc(var(--inner-radius) + 0.25mm)
-    ),
-    #4ADEDE;
+.large-button:focus {
+  background-position: -5px -5px;
 }
 
-.green:after {
-  background: radial-gradient(
-      transparent calc(var(--inner-radius) - 1mm),
-      black
-    ),
-    linear-gradient(to bottom right, transparent, var(--black)),  #00FF00;
-  transition: all 100ms;
+.large-button:active {
+  background-position: -215px -5px;
 }
 
-.green:before {
-  background: radial-gradient(var(--white), transparent 75%),
-    radial-gradient(
-      transparent var(--inner-radius),
-      var(--white) var(--inner-radius),
-      var(--white) calc(var(--inner-radius) + 0.25mm),
-      var(--black) calc(var(--inner-radius) + 0.25mm)
-    ),
-    #00FF00;
+.large-button-shadow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
-.yellow:after {
-  background: radial-gradient(
-      transparent calc(var(--inner-radius) - 1mm),
-      black
-    ),
-    linear-gradient(to bottom right, transparent, var(--black)), yellow;
-  transition: all 100ms;
-}
-
-.yellow:before {
-  background: radial-gradient(var(--white), transparent 75%),
-    radial-gradient(
-      transparent var(--inner-radius),
-      var(--white) var(--inner-radius),
-      var(--white) calc(var(--inner-radius) + 0.25mm),
-      var(--black) calc(var(--inner-radius) + 0.25mm)
-    ),
-    yellow;
-}
-.a {
-  top: 110px;
-}
-
-.b {
-  top: 23px;
-  left: -111px;
-}
-
-.c {
-  top: -45px;
-  left: 10px;
-}
-
-.d {
-  top: 281px;
-  left: 10px;
+@media (max-width: 600px) {
+  .buttons-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
